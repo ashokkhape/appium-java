@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    image: gradle
+    command: sh -c "gradle test --info" 
+    volumes:
+    - .:/code
+    working_dir: /code
+    extra_hosts:
+    - "service.localhost:192.168.1.100"
+    links:
+    - appium
+    depends_on:
+    - appium
+  appium:
+    image: appium/appium
+
