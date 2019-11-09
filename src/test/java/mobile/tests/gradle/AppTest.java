@@ -5,6 +5,7 @@ package mobile.tests.gradle;
 
 import org.testng.annotations.*;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -14,16 +15,15 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AppTest {
     @Test
-    public void appHasAGreeting() throws MalformedURLException {
-        String appPath = "/Users/in-ashokkumar.khape/Documents/vodqa-workshop/mobile-tests-gradle/apps/android/Android-NativeDemoApp-0.2.1.apk";
+    public void installApp() throws MalformedURLException {
+        File app = new File("apps/android/Android-NativeDemoApp-0.2.1.apk");
         WebDriver driver;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "9");
         capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("app", appPath);
+        capabilities.setCapability("app", app.getAbsolutePath());
 
-        driver = new RemoteWebDriver(new URL("http://service.localhost:4723/wd/hub"), capabilities);
+        driver = new RemoteWebDriver(new URL("http://appium:4723/wd/hub"), capabilities);
     }
 }
-
