@@ -7,11 +7,19 @@ services:
     - .:/code
     working_dir: /code
     extra_hosts:
-    - "service.localhost:192.168.1.100"
+    - "service.localhost:192.168.0.105"
     links:
     - appium
     depends_on:
     - appium
   appium:
-    image: appium/appium
-
+    image: budtmo/docker-android-x86-9.0
+    ports:
+    - 6080:6080
+    - 5554:5554
+    - 5555:5555
+    environment:
+    - DEVICE="Samsung Galaxy S6"
+    volumes:
+    - .:/code
+  
