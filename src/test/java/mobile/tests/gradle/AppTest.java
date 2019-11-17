@@ -25,6 +25,7 @@ public class AppTest {
         capabilities.setCapability("uiautomator2ServerInstallTimeout",90000);
         capabilities.setCapability("uiautomator2ServerLaunchTimeout",90000);
         capabilities.setCapability("adbExecTimeout",90000);
+        capabilities.setCapability("automationName", "UiAutomator2");
         driver = new RemoteWebDriver(new URL("http://192.168.97.137:4723/wd/hub"), capabilities);
     }
 }
