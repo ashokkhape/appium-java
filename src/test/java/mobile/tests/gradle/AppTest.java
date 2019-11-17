@@ -24,6 +24,6 @@ public class AppTest {
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("app", app.getAbsolutePath());
 
-        driver = new RemoteWebDriver(new URL("http://appium:4723/wd/hub"), capabilities);
+        driver = new RemoteWebDriver(new URL("http://192.168.97.137:4723/wd/hub"), capabilities);
     }
 }
