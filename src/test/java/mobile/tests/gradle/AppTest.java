@@ -17,12 +17,13 @@ public class AppTest {
     @Test
     public void installApp() throws MalformedURLException {
         String seleniumGridURL = System.getenv("SELENIUM_GRID_URL");
+        String androidAppPath = System.getenv("ANDROID_APP_PATH");
         WebDriver driver;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "9");
         capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("app", "/apps/android/Android-NativeDemoApp-0.2.1.apk");
+        capabilities.setCapability("app", androidAppPath + "/android/Android-NativeDemoApp-0.2.1.apk");
         capabilities.setCapability("uiautomator2ServerInstallTimeout",90000);
         capabilities.setCapability("uiautomator2ServerLaunchTimeout",90000);
         capabilities.setCapability("adbExecTimeout",90000);
