@@ -16,6 +16,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class AppTest {
     @Test
     public void installApp() throws MalformedURLException {
+        String seleniumGridURL = System.getenv("SELENIUM_GRID_URL");
         WebDriver driver;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
@@ -26,6 +27,6 @@ public class AppTest {
         capabilities.setCapability("uiautomator2ServerLaunchTimeout",90000);
         capabilities.setCapability("adbExecTimeout",90000);
         capabilities.setCapability("automationName", "UiAutomator2");
-        driver = new RemoteWebDriver(new URL("http://192.168.97.137:4723/wd/hub"), capabilities);
+        driver = new RemoteWebDriver(new URL(seleniumGridURL), capabilities);
     }
 }
