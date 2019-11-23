@@ -22,20 +22,11 @@ public class AppTest {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "9");
         capabilities.setCapability("deviceName", "Android Emulator");
-<<<<<<< HEAD
-        capabilities.setCapability("app", androidAppPath + "/android/Android-NativeDemoApp-0.2.1.apk");
-        capabilities.setCapability("uiautomator2ServerInstallTimeout",90000);
-        capabilities.setCapability("uiautomator2ServerLaunchTimeout",90000);
-        capabilities.setCapability("adbExecTimeout",90000);
-        capabilities.setCapability("automationName", "UiAutomator2");
-        driver = new RemoteWebDriver(new URL(seleniumGridURL), capabilities);
-=======
         capabilities.setCapability("app", "/apps/android/Android-NativeDemoApp-0.2.1.apk");
         // capabilities.setCapability("uiautomator2ServerInstallTimeout",90000);
         // capabilities.setCapability("uiautomator2ServerLaunchTimeout",90000);
         // capabilities.setCapability("adbExecTimeout",90000);
         capabilities.setCapability("automationName", "UiAutomator2");
         driver = new RemoteWebDriver(new URL("http://192.168.97.141:4723/wd/hub"), capabilities);
->>>>>>> Ashok | Replaced appium URL with new IP of VM
     }
 }
