@@ -23,9 +23,9 @@ public class AppTest {
         capabilities.setCapability("platformVersion", "9");
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("app", "/apps/android/Android-NativeDemoApp-0.2.1.apk");
-        // capabilities.setCapability("uiautomator2ServerInstallTimeout",90000);
-        // capabilities.setCapability("uiautomator2ServerLaunchTimeout",90000);
-        // capabilities.setCapability("adbExecTimeout",90000);
+        capabilities.setCapability("deviceReadyTimeout",90000);
+        capabilities.setCapability("androidDeviceReadyTimeout",90000);
+        capabilities.setCapability("adbExecTimeout",90000);
         capabilities.setCapability("automationName", "UiAutomator2");
         driver = new RemoteWebDriver(new URL("http://192.168.97.141:4723/wd/hub"), capabilities);
     }
