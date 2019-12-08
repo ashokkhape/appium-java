@@ -17,6 +17,9 @@
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
     "maxSession": 1,
     "register": true,
-    "registerCycle": 5000
+    "registerCycle": 5000,
+    "hubPort": "SELENIUM_GRID_PORT",
+    "hubHost": "SELENIUM_GRID_HOST",
+    "hubProtocol": "http"
   }
 }
